@@ -170,7 +170,7 @@ class SQL(DataLayer):
         for document in doc_or_docs:
             model_instance = self._create_model_instance(resource, document)
             self.driver.session.add(model_instance)
-            self.driver.session.commit()
+            # self.driver.session.commit()
             id_field = self._id_field(resource)
             document[id_field] = getattr(model_instance, id_field)
             rv.append(document[id_field])
